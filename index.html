@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeneFroid - Réparation de frigos, climatisation et électricité</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1585771724684-382c0c0636a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+       
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+       
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+       
+        .testimonial-card:hover {
+            transform: scale(1.05);
+        }
+       
+        .contact-form input, .contact-form textarea {
+            transition: all 0.3s ease;
+        }
+       
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #3B82F6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+        }
+       
+        .floating-button {
+            animation: float 3s ease-in-out infinite;
+        }
+       
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header -->
+    <header class="bg-blue-800 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html"><img 
+  src="img/logo_tene_froid.jpg" 
+  alt="Logo Tene Froid" 
+  class="h-14 w-14 rounded-full border-4 border-white shadow-xl hover:scale-110 transition-transform duration-300 ease-in-out object-cover cursor-pointer"/>
+</a>
+                <h1 class="text-2xl font-bold">Tene<span class="text-blue-200">Froid</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#accueil" class="hover:text-blue-200 transition">Accueil</a>
+                <a href="#services" class="hover:text-blue-200 transition">Services</a>
+                <a href="#a-propos" class="hover:text-blue-200 transition">À propos</a>
+                <a href="#temoignages" class="hover:text-blue-200 transition">Témoignages</a>
+                <a href="#contact" class="hover:text-blue-200 transition">Contact</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-900 absolute w-full left-0 px-4 pb-4 shadow-lg">
+            <a href="#accueil" class="block py-2 hover:text-blue-200 transition">Accueil</a>
+            <a href="#services" class="block py-2 hover:text-blue-200 transition">Services</a>
+            <a href="#a-propos" class="block py-2 hover:text-blue-200 transition">À propos</a>
+            <a href="#temoignages" class="block py-2 hover:text-blue-200 transition">Témoignages</a>
+            <a href="#contact" class="block py-2 hover:text-blue-200 transition">Contact</a>
+        </div>
+    </header>
+    
+
+    <!-- Hero Section -->
+    <section
+    id="accueil"
+    class="hero min-h-screen flex items-center justify-center text-white relative"
+    style="background-image: url('img/1.jpg'); background-size: cover; background-position: center;"
+  >
+    <!-- Overlay sombre -->
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+  
+    <!-- Contenu -->
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">Réparation d'Électroménagers & Climatisation</h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+        Service rapide et professionnel pour vos appareils de réfrigération, climatisation et problèmes électriques.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
+          <i class="fas fa-phone-alt mr-2"></i> Contactez-nous
+        </a>
+        <a href="#services" class="bg-white hover:bg-gray-100 text-blue-800 font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
+          <i class="fas fa-tools mr-2"></i> Nos Services
+        </a>
+      </div>
+    </div>
+  </section>
+  
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Nos Services Professionnels</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Nous offrons des solutions rapides et efficaces pour tous vos problèmes d'électroménager et de climatisation.</p>
+            </div>
+           
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-lg transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-refrigerator"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Réparation de Réfrigérateurs</h3>
+                    <p class="text-gray-600 mb-4">Diagnostic et réparation de tous types de réfrigérateurs et congélateurs, avec pièces de qualité.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Fuites de gaz</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Problèmes de thermostat</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Moteurs défectueux</li>
+                    </ul>
+                </div>
+               
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-lg transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-fan"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Climatisation</h3>
+                    <p class="text-gray-600 mb-4">Installation, entretien et réparation de systèmes de climatisation résidentiels et commerciaux.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Recharge de gaz</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Nettoyage complet</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Dépannage électrique</li>
+                    </ul>
+                </div>
+               
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-lg transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Services Électriques</h3>
+                    <p class="text-gray-600 mb-4">Solutions pour tous vos problèmes électriques liés à vos appareils électroménagers.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Pannes de courant</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Câblage défectueux</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Mise aux normes</li>
+                    </ul>
+                </div>
+               
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-lg transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-washing-machine"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Lave-linge & Lave-vaisselle</h3>
+                    <p class="text-gray-600 mb-4">Réparation de tous types de machines à laver et lave-vaisselle.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Fuites d'eau</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Problèmes de vidange</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Moteurs et pompes</li>
+                    </ul>
+                </div>
+               
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-lg transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Four & Cuisinière</h3>
+                    <p class="text-gray-600 mb-4">Réparation de fours, cuisinières et plaques de cuisson.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Thermostats défectueux</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Problèmes de chauffage</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Panne électrique</li>
+                    </ul>
+                </div>
+               
+                <!-- Service 6 -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-lg transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Service d'Urgence</h3>
+                    <p class="text-gray-600 mb-4">Disponible 24/7 pour les urgences qui ne peuvent pas attendre.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Intervention rapide</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Techniciens qualifiés</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Solution immédiate</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="a-propos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <img src="img/1.jpg" alt="Technicien en réparation" class="rounded-xl shadow-xl w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-6">À propos de TeneFroid</h2>
+                    <p class="text-gray-600 mb-6">Fondée en 2010, TeneFroid est devenue une référence dans le domaine de la réparation d'électroménagers et de systèmes de climatisation. Notre équipe de techniciens certifiés s'engage à fournir un service de qualité supérieure.</p>
+                   
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-medal text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">15+ ans d'expérience</h4>
+                                <p class="text-gray-600">Une expertise accumulée depuis plus d'une décennie</p>
+                            </div>
+                        </div>
+                       
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-user-shield text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Techniciens certifiés</h4>
+                                <p class="text-gray-600">Professionnels formés et qualifiés</p>
+                            </div>
+                        </div>
+                       
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-thumbs-up text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Garantie sur les réparations</h4>
+                                <p class="text-gray-600">Nos interventions sont garanties jusqu'à 2 ans</p>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="bg-blue-50 p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-3 text-blue-800">Notre engagement</h4>
+                        <p class="text-gray-600">"Chez TeneFroid, nous croyons en un service honnête, transparent et de qualité. Nous utilisons uniquement des pièces de rechange de première qualité et nous nous engageons à vous fournir le meilleur rapport qualité-prix."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-blue-800 text-white">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div class="text-4xl font-bold mb-2 counter" data-target="1000">+0</div>
+              <div class="text-blue-200">Appareils réparés</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold mb-2 counter" data-target="98">0%</div>
+              <div class="text-blue-200">Satisfaction clients</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold mb-2 counter" data-target="24">0h</div>
+              <div class="text-blue-200">Service d'urgence</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold mb-2 counter" data-target="15">0+</div>
+              <div class="text-blue-200">Techniciens experts</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+    <!-- Testimonials Section -->
+    <section id="temoignages" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Ce que disent nos clients</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Des milliers de clients satisfaits nous font confiance pour leurs réparations.</p>
+            </div>
+           
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold mr-4">MM</div>
+                        <div>
+                            <h4 class="font-bold">Mohamed Mariko</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Mon réfrigérateur est tombé en panne un vendredi soir. TeneFroid a répondu immédiatement et le technicien est venu le lendemain matin. Réparation rapide et efficace. Je recommande vivement!"</p>
+                </div>
+               
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold mr-4">MS</div>
+                        <div>
+                            <h4 class="font-bold">Mariam Sangare</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Excellent service pour la réparation de ma climatisation. Le technicien était très professionnel, a expliqué le problème clairement et a fait un travail impeccable. Prix très raisonnable."</p>
+                </div>
+               
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold mr-4">AC</div>
+                        <div>
+                            <h4 class="font-bold">Amadou Cisse</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"J'ai fait appel à TeneFroid pour plusieurs réparations dans mon restaurant. Toujours ponctuels, professionnels et efficaces. Ils sont maintenant mes réparateurs attitrés."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Contactez-nous</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Disponibles 24h/24 pour répondre à vos questions et interventions urgentes.</p>
+          </div>
+      
+          <div class="flex flex-col lg:flex-row gap-10">
+            <!-- Formulaire -->
+            <div class="lg:w-1/2">
+              <form class="contact-form space-y-6" novalidate>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label for="name" class="block text-gray-700 mb-2 font-semibold">Nom complet <span class="text-red-500">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="Votre nom complet"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" aria-required="true" aria-describedby="nameError">
+                    <p id="nameError" class="text-red-600 text-sm mt-1 hidden">Veuillez entrer votre nom complet.</p>
+                  </div>
+                  <div>
+                    <label for="email" class="block text-gray-700 mb-2 font-semibold">Email <span class="text-red-500">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="exemple@mail.com"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" aria-required="true" aria-describedby="emailError">
+                    <p id="emailError" class="text-red-600 text-sm mt-1 hidden">Veuillez entrer un email valide.</p>
+                  </div>
+                </div>
+                <div>
+                  <label for="phone" class="block text-gray-700 mb-2 font-semibold">Téléphone</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+223 1234 5678"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" aria-describedby="phoneHelp">
+                  <p id="phoneHelp" class="text-gray-500 text-sm mt-1">Facultatif, format international recommandé.</p>
+                </div>
+                <div>
+                  <label for="service" class="block text-gray-700 mb-2 font-semibold">Service demandé <span class="text-red-500">*</span></label>
+                  <select id="service" name="service" required aria-required="true" aria-describedby="serviceError"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                    <option value="" disabled selected>Sélectionnez un service</option>
+                    <option value="refrigerateur">Réparation de réfrigérateur</option>
+                    <option value="climatisation">Climatisation</option>
+                    <option value="electrique">Problème électrique</option>
+                    <option value="lave-linge">Lave-linge/Lave-vaisselle</option>
+                    <option value="four">Four/Cuisinière</option>
+                    <option value="urgence">Service d'urgence</option>
+                  </select>
+                  <p id="serviceError" class="text-red-600 text-sm mt-1 hidden">Veuillez sélectionner un service.</p>
+                </div>
+                <div>
+                  <label for="message" class="block text-gray-700 mb-2 font-semibold">Message <span class="text-red-500">*</span></label>
+                  <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre demande"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" aria-required="true" aria-describedby="messageError"></textarea>
+                  <p id="messageError" class="text-red-600 text-sm mt-1 hidden">Veuillez écrire un message.</p>
+                </div>
+                <button type="submit"
+                  class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-400">
+                  Envoyer la demande
+                </button>
+                <p id="formSuccess" class="text-green-600 font-semibold mt-4 hidden">Merci pour votre message! Nous vous contacterons bientôt.</p>
+              </form>
+            </div>
+      
+            <!-- Coordonnées -->
+            <div class="lg:w-1/2">
+              <div class="bg-gray-50 p-8 rounded-xl shadow-lg h-full">
+                <h3 class="text-2xl font-bold text-blue-800 mb-6">Nos coordonnées</h3>
+      
+                <div class="space-y-6">
+                  <div class="flex items-start">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                      <i class="fas fa-map-marker-alt text-blue-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-lg mb-1">Adresse</h4>
+                      <p class="text-gray-600">Kalaban Koro près de</p>
+                    </div>
+                  </div>
+      
+                  <div class="flex items-start">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                      <i class="fas fa-phone-alt text-blue-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-lg mb-1">Téléphone</h4>
+                      <p class="text-gray-600">78388895</p>
+                      <p class="text-gray-600">Service Commercial: 76847042</p>
+                      <p class="text-gray-600">Service Technique: 66196972</p>
+                    </div>
+                  </div>
+      
+                  <div class="flex items-start">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                      <i class="fas fa-envelope text-blue-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-lg mb-1">Email</h4>
+                      <p class="text-gray-600">tenefroid@gmail.com</p>
+                    </div>
+                  </div>
+      
+                  <div class="flex items-start">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                      <i class="fas fa-clock text-blue-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-lg mb-1">Horaires</h4>
+                      <p class="text-gray-600">Lundi-Vendredi: 8h-20h</p>
+                      <p class="text-gray-600">Samedi: 9h-18h</p>
+                      <p class="text-gray-600">Dimanche: Urgences seulement</p>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="mt-8">
+                  <h4 class="font-bold text-lg mb-4">Suivez-nous</h4>
+                  <div class="flex space-x-4">
+                    <a href="#" class="bg-blue-100 p-3 rounded-full text-blue-600 hover:bg-blue-200 transition" aria-label="Facebook">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="bg-blue-100 p-3 rounded-full text-blue-600 hover:bg-blue-200 transition" aria-label="Twitter">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="bg-blue-100 p-3 rounded-full text-blue-600 hover:bg-blue-200 transition" aria-label="Instagram">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="bg-blue-100 p-3 rounded-full text-blue-600 hover:bg-blue-200 transition" aria-label="LinkedIn">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <script>
+      document.querySelector('.contact-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+      
+        // Cacher les erreurs précédentes
+        document.querySelectorAll('.text-red-600').forEach(el => el.classList.add('hidden'));
+        document.getElementById('formSuccess').classList.add('hidden');
+      
+        // Récupérer les valeurs
+        const formData = {
+          name: this.name.value.trim(),
+          email: this.email.value.trim(),
+          phone: this.phone.value.trim(),
+          service: this.service.value,
+          message: this.message.value.trim()
+        };
+      
+        try {
+          const response = await fetch('contact.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(formData)
+          });
+      
+          const result = await response.json();
+      
+          if (!response.ok) {
+            // Afficher les erreurs
+            if (result.errors) {
+              if (result.errors.name) {
+                document.getElementById('nameError').textContent = result.errors.name;
+                document.getElementById('nameError').classList.remove('hidden');
+              }
+              if (result.errors.email) {
+                document.getElementById('emailError').textContent = result.errors.email;
+                document.getElementById('emailError').classList.remove('hidden');
+              }
+              if (result.errors.service) {
+                document.getElementById('serviceError').textContent = result.errors.service;
+                document.getElementById('serviceError').classList.remove('hidden');
+              }
+              if (result.errors.message) {
+                document.getElementById('messageError').textContent = result.errors.message;
+                document.getElementById('messageError').classList.remove('hidden');
+              }
+            } else if (result.error) {
+              alert(result.error);
+            }
+          } else {
+            // Succès
+            document.getElementById('formSuccess').classList.remove('hidden');
+            this.reset();
+          }
+        } catch (err) {
+          alert("Erreur réseau ou serveur.");
+          console.error(err);
+        }
+      });
+      </script>
+      
+      
+
+    <!-- Map Section -->
+    <div class="h-96 w-full">
+        <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125591.37478814889!2d-7.986928950000001!3d12.57052395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe51cdad3e7486e1%3A0x6763e0159b6f8f06!2sKalaban%20Koro%2C%20Bamako%2C%20Mali!5e0!3m2!1sfr!2sml!4v1716818400000!5m2!1sfr!2sml" 
+  width="100%" 
+  height="100%" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+    </div>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-blue-800 text-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Besoin d'une réparation urgente?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Notre équipe est disponible 24h/24 pour répondre à vos urgences.</p>
+            <a href="tel:+22378388895" class="inline-block bg-white hover:bg-gray-100 text-blue-800 font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">
+                <i class="fas fa-phone-alt mr-2"></i> Appelez-nous maintenant: 78388895
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-snowflake text-2xl mr-2"></i>
+                        <h3 class="text-2xl font-bold">Tene<span class="text-blue-400">Froid</span></h3>
+                    </div>
+                    <p class="text-gray-400">Service professionnel de réparation d'électroménagers et climatisation depuis 2010.</p>
+                </div>
+               
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#accueil" class="text-gray-400 hover:text-white transition">Accueil</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#a-propos" class="text-gray-400 hover:text-white transition">À propos</a></li>
+                        <li><a href="#temoignages" class="text-gray-400 hover:text-white transition">Témoignages</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+               
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Réfrigérateurs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Climatisation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Électricité</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Lave-linge</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Service d'urgence</a></li>
+                    </ul>
+                </div>
+               
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Abonnez-vous pour recevoir nos offres spéciales.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Votre email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+           
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 MD. Tous droits réservés.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Button -->
+    <a href="tel:+22378388895" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-xl floating-button">
+        <i class="fas fa-phone-alt text-xl"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+      
+        if (menuBtn && mobileMenu) {
+          menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+          });
+        }
+      
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+      
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+      
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              if (mobileMenu) mobileMenu.classList.add('hidden');
+      
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+      
+        // Form submission simulation
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+          contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+      
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+      
+            console.log('Form submitted:', { name, email, phone, service, message });
+      
+            alert('Merci pour votre message! Nous vous contacterons bientôt.');
+      
+            this.reset();
+          });
+        }
+      
+        // Show/hide floating button on scroll
+        window.addEventListener('scroll', function () {
+          const scrollPosition = window.scrollY;
+          const floatingButton = document.querySelector('.floating-button');
+      
+          if (!floatingButton) return;
+      
+          if (scrollPosition > 300) {
+            floatingButton.classList.remove('hidden');
+          } else {
+            floatingButton.classList.add('hidden');
+          }
+        });
+      
+        // Animate counters only when section is visible
+        document.addEventListener("DOMContentLoaded", () => {
+          const counters = document.querySelectorAll(".counter");
+          const section = document.querySelector('.py-16.bg-blue-800'); // adapte ce sélecteur à ta section
+      
+          if (!section) return;
+      
+          let hasAnimated = false;
+      
+          const animateCounters = () => {
+            counters.forEach(counter => {
+              const target = +counter.getAttribute("data-target");
+              const suffix = counter.innerText.replace(/[\d]/g, '');
+              let count = 0;
+              const increment = target / 200;
+      
+              const updateCount = () => {
+                count += increment;
+                if (count < target) {
+                  counter.innerText = Math.ceil(count) + suffix;
+                  setTimeout(updateCount, 20);
+                } else {
+                  counter.innerText = target + suffix;
+                }
+              };
+      
+              updateCount();
+            });
+          };
+      
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting && !hasAnimated) {
+                animateCounters();
+                hasAnimated = true;
+                observer.unobserve(section);
+              }
+            });
+          }, {
+            threshold: 0.5
+          });
+      
+          observer.observe(section);
+        });
+      </script>                 
+</body>
+</html>
